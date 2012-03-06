@@ -1,0 +1,349 @@
+%\documentclass[12pt][fleqn]{report}
+\documentclass[fleqn]{article}
+\usepackage{pdfsync}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{amsmath}
+
+\setlength{\topmargin}{-0.5in}
+\setlength{\textheight}{9.25in}
+\setlength{\oddsidemargin}{0.0in}
+\setlength{\evensidemargin}{0.0in}
+\setlength{\textwidth}{6.5in}
+\def\labelenumi{\arabic{enumi}.}
+\def\theenumi{\arabic{enumi}}
+\def\labelenumii{(\alph{enumii})}
+\def\theenumii{\alph{enumii}}
+\def\p@enumii{\theenumi.}
+\def\labelenumiii{\arabic{enumiii}.}
+\def\theenumiii{\arabic{enumiii}}
+\def\p@enumiii{(\theenumi)(\theenumii)}
+\def\labelenumiv{\arabic{enumiv}.}
+\def\theenumiv{\arabic{enumiv}}
+\def\p@enumiv{\p@enumiii.\theenumiii}
+\pagestyle{plain}
+%\setcounter{secnumdepth}{0}
+
+\begin{document}
+
+
+\begin{center}
+\bigskip \textsc{Integration Review Sheet}
+
+\textbf{Reed Rosenbluth}
+
+\textrm{BC Calculus}
+
+
+\emph{03/04/12}
+\end{center}
+
+\hrule
+\vspace{.2in}
+\begin{enumerate}
+\item Formulas for basic antiderivatives
+\begin{align*}
+\int {x^n } dx &= \frac{x^{n + 1} }{n + 1}, \ (n \ne  - 1)\\
+\int 0 \ dx &= c\\
+\int k \ dx  &= kx + c\\
+\int kf(x)dx &= k \int f(x)dx\\
+\int \left[ f(x) \pm g(x) \right] dx &= \int f(x)dx \pm \int g(x) dx
+\end{align*}
+
+\item Chain rule of integration
+\begin{equation*}
+\int {f'(g(x)) \cdot g'(x) }  = f(g(x)) + c
+\end{equation*}
+
+\item Trig integration
+
+\begin{enumerate}
+\item Big 6
+\begin{align*}
+\int \cos (x) \ dx &= \sin (x) + c \\[1em]
+\int \sin (x) \ dx &= - \cos (x) + c \\[1em]
+\int \csc^2 x \ dx &= -\cot (x) + c \\[1em]
+\int \sec^2 x \ dx &= \tan (x) + c \\[1em]
+\int \sec (x) \tan (x) \ dx &= \sec (x) + c \\[1em]
+\int \csc (x) \cot (x) \ dx &= - \csc (x) + c 
+\end{align*}
+
+\item Big 4
+\begin{align*}
+\int \tan^2 x \ dx &= \int (\sec^2 x  - 1) \ dx = \tan (x) - x + c\\
+\int \cot^2 x \ dx &= \int (\csc^2 x - 1) \ dx = - \cot (x) - x + c\\
+\int \sin^2 x \ dx &= \int \frac{1-\cos (2x)}{2} \ dx = \frac{1}{2}x - \frac{1}{4}\sin 2x + c\\
+\int \cos^2 x \ dx &= \int \frac{1+\cos (2x)}{2} \ dx = \frac{1}{2}x + \frac{1}{4}\sin 2x + c\\
+\end{align*}
+
+\item Example of chain rule
+\begin{equation*}
+\int \sec^2 (5x) \ dx = \frac{\tan (5x)}{5} + c
+\end{equation*}
+\end{enumerate}
+
+\item Example of an initial condition problem (find c)
+\begin{align*}
+F'(x) &= \frac{1}{x^2}, \quad x>0\\
+F(x) &= \int \frac{1}{x^2} \ dx\\
+&= \frac{x^{-1}}{-1} + c\\
+&= -\frac{1}{x} + c, \quad x>0\\
+F(1) &= -1 + c = 0  \Rightarrow c=1\\
+ F(x) &= \frac{-1}{x} + 1, \quad x>0\\
+\end{align*}
+
+\item Solve a differential equation (separate and integrate)
+
+Find the general solution of the differential equation $\frac{dy}{dx} = x^2 + 1$.
+\begin{align*}
+dy &= (x^2 + 1)dx\\
+\int dy &= \int x^2 + 1 \ dx\\
+y &= \frac{x^3}{3} + x + c
+\end{align*}
+
+\item Integrate from acceleration to position finding both constants from initial points
+% page 254
+\begin{align*}
+s(0) &= 80 \quad s'(0)=64 \quad s''(t)=-32 \\
+s'(t) & = \int s''(t)dt = \int -32 \ dt = -32t + c_1\\
+s'(0) & = 64 = -32(0) + c_1 \Rightarrow c_1 = 64\\
+s(t) &= \int s'(t)dt = \int -32t + 64 \ dt = -16t^2 + 64t + c_2\\
+80 &= -16(0)^2 + 64(0) + c_2 \Rightarrow c_2 = 80\\
+s(t) & = -16t^2 + 64t + 80\\
+\end{align*}
+
+\item Distance travelled
+
+A particle moves along the $x$-axis at a velocity of $v(t) = \frac{1}{\sqrt{t}}$. Find the distance traveled from $t=0$ to $t=1$.
+\begin{align*}
+x(t) &= \int v(t)dt\\
+&= \int \frac{1}{\sqrt{t}}dt\\
+&= 2\sqrt{t}\\
+&= 2 - 0 = 2\\
+\end{align*}
+
+\item Formula for definite integral. Meaning of definite integral.
+
+The definite integral of $f(x)$ from $a$ to $b$ represents the area under the curve $f(x)$ from $a$ to $b$. The definition is as follows.
+\begin{equation*}
+\lim _{||\Delta||\rightarrow 0} \sum_{i = 1}^n f(c_i)\Delta x_i = \int_a^b f(x)dx
+\end{equation*}
+
+\item LRAM, RRAM, MRAM -- what affects order?
+
+\begin{align*}
+LRAM &= \sum_{i = 1}^{n} f(x_{i-1})\Delta x\\
+RRAM &= \sum_{i = 1}^{n} f(x_i)\Delta x\\
+MRAM &= \sum_{i = 1}^{n} f(\frac{x_i + x_{i-1}}{2})\Delta x\\
+\end{align*}
+
+For an increasing function $LRAM \leq MRAM \leq RRAM$ and for decreasing functions \newline $RRAM \leq MRAM \leq LRAM$. Otherwise the order cannot be determined.
+
+\item Trapeziod rule -- what affects over or under approximation?
+
+\begin{equation*}
+\int _a^b f(x)dx \approx \sum_{i = 1}^{n} \left(\frac{f(x_i)+f(x_{i-1})}{2}\right)\Delta x\\
+\end{equation*}
+
+Whether or not the curve is concave up or concave down affects affects the approximation of this Riemann Sum. It under approximates functions which are concave down and over approximates functions which are concave up.
+
+\item Summation as integral -- example with constants and n rectangles
+
+\begin{align*}
+n &= 4\\
+\int _1^3 x^2 + 2 \ dx &\approx \frac{1}{2} \sum _{i=1}^4 \left(\frac{i}{2}\right)^2
+\end{align*}
+
+\item Properties of integrals (all 10)
+\begin {enumerate}
+
+\item $\int _a^a f(x)dx = 0$
+
+\item $\int _a^b f(x)dx = - \int _b^a f(x)dx$
+
+\item if $f(x)$ is odd then $\int _{-a}^a f(x)dx = 0$
+
+\item if $f(x)$ is even then $\int _{-a}^a f(x)dx = 2\int _0^a f(x)dx$
+
+\item $\int _a^b f(x)dx = \int _{a-c}^{b-c }f(x+c)dx$
+
+\item $\int _a^b kf(x)dx = k\int _a^b f(x)dx$
+
+\item $\int _a^b f(x)dx = \int _a^c f(x)dx + \int _c^b f(x)dx$
+
+\item $\int _a^b \left[f(x) \pm g(x) \right]dx = \int _a^b f(x)dx \pm \int _a^b g(x)dx$
+
+\item $\int _a^b \left[f(x) \pm k \right]dx = \int _a^b f(x)dx \pm \int _a^b kdx$
+
+\item if $f(x) \geq 0$ then $\int _a^b f(x)dx \geq 0$\\
+if $f(x) \leq 0$ then $\int _a^b f(x)dx \leq 0$
+
+\end{enumerate}
+
+\item First Fundamental Theorem
+
+If a function $f$ is continuous on the closed interval $[a,b]$ and $F$ is the antiderivative of $f$ on the interval $[a,b]$ then
+\begin{equation*}
+ \int_a^b f(x) \ dx = F(b) - F(a)
+ \end{equation*}
+
+\item Second Fundamental Theorem
+
+If $f$ is continuous on an open interval $i$ containing $a$, then for every $x$ in the interval,
+\begin{equation*}
+\frac{d}{dx} \left [ \int_a^x f(t) \ dt \right ] = f(x)
+\end{equation*}
+
+\begin {enumerate}
+
+\item 
+\begin{equation*}
+\frac{d}{dx}\left[\int_0^x \sqrt{t^2+1} \ dt\right] = \sqrt{x^2+1}
+\end{equation*}
+
+\item 
+\begin{equation*}
+\frac{d}{dx}\left[\int_{\pi / 2}^{x^3} \cos{t} \ dt\right] = 3x^2 \cos x^3
+\end{equation*}
+
+\end{enumerate}
+
+\item Accumulation Theorem
+\begin{equation*}
+ F(a) + \int_a^b f(x) \ dx = F(b)
+ \end{equation*}
+\begin {enumerate}
+
+\item Graphical interpretation
+
+\item Verbal interpretation
+
+\end{enumerate}
+
+\item Area between 2 curves
+\begin{equation*}
+A = \int_a^b [f(x) - g(x)] \ dx
+\end{equation*}
+\begin {enumerate}
+\item Vertical Rectangles
+
+% page 448
+Find the area of the region bounded by the graphs of $f(x) = 2 - x^2$ and $g(x) = x$.
+\begin{align*}
+2-x^2 & = x \Rightarrow x = -2,1\\
+a & = -2, \quad b = 1\\
+A &= \int _{-2}^1 (2-x^2)-x \ dx\\
+&= \frac{9}{2}
+\end{align*}
+
+\item Horizontal Rectangles
+
+% page 450 example 5
+Find the area of the region bounded by the graphs of $x=3-y^2$ and $x=y+1$.
+\begin{align*}
+3-y^2 &= y+1 \Rightarrow y = -2,1\\
+A &= \int _{-2}^1 (3-y^2) - (y+ 1) \ dy\\
+&= \frac{9}{2}
+\end{align*}
+
+\end{enumerate}
+\item Volume -- Disks
+
+To find the volume of a solid of revolution with the disk method:
+\begin{align*}
+V &= \pi \int_a^b \left [ R(x)\right]^2 \ dx \quad \textit{horizontal axis of revolution}\\
+&= \pi \int_a^b \left [ R(y)\right]^2 \ dy \quad \textit{vertical axis of revolution}\\
+\end{align*}
+\begin {enumerate}
+
+\item About $x$-axis
+
+%page 458 example 1
+Find the volume of the solid formed by revolving the region bounded by the graph of $f(x)=\sqrt{\sin x}$ and the $x$-axis $(0 \leq x \leq \pi)$ about the $x$-axis.
+
+\begin{align*}
+V &= \pi \int _0^{\pi} (\sqrt{\sin{x}})^2 \ dx\\
+&= \pi \int _0^{\pi} \sin x \ dx\\
+&= \left[-\cos x \right]_0^\pi dx\\
+&= 2\pi
+\end{align*}
+
+\item About $y$-axis
+
+Find the volume of the solid formed by revolving the region bound by the graph of $y = x$ and $y = 2$ around the $y$-axis.
+\begin{align*}
+V &= \pi \int _0^{2} y^2 \ dy\\
+&= \frac{8\pi}{3}
+\end{align*}
+
+\end{enumerate}
+\item Volume washers
+
+Volume of washer = $\pi(R^2 -r^2)w$.
+\begin{equation*}
+V = \pi \int_a^b \left( \left [ R(x)\right]^2 - \left[ r(x) \right]^2 \right) \ dx
+\end{equation*}
+
+\begin {enumerate}
+
+\item About x axis
+
+%page 459 example 3
+Find the volume of the solid formed by revolving the region bounded by the graphs of $y= \sqrt{x}$ and $y=x^2$ about the $x$-axis.
+\begin{align*}
+V &= \pi \int_0^1 \left[\left(\sqrt x \right)^2 - (x^2)^2 \right]dx\\
+&= \pi \int _0^1 (x - x^4)dx\\
+&= \frac{3\pi}{10}
+\end{align*}
+
+\item About y axis
+
+%page 460 example 4
+Find the volume of the solid formed by revolving the region bounded by the graphs of $y=x^2+1$, $y=0$, $x=0$, and $x=1$ about the $y$-axis.
+\begin{align*}
+r(y)&=\begin{cases}
+    0&  0 \leq y \leq 1\\
+    \sqrt{y-1}&  1 \leq y \leq 2
+\end{cases}\\
+V &= \pi \int _0^1 (1^2 - 0 ^2)dy + \pi \int _1^2 \left[1^2 - \left(\sqrt{y-1}\right)^2\right]dy\\
+&= \pi \int _0^1 (1)dy + \pi \int _1^2 (2-y)dy\\
+&=  \frac{3\pi}{2}
+\end{align*}
+
+\end{enumerate}
+
+\item Volume known cross sections
+
+\begin{align*}
+V &= \int_a^b A(x) \ dx \quad \textit{perpendicular to $x$-axis}\\
+&= \int_a^b A(y) \ dy \quad \textit{perpendicular to $y$-axis}\\
+\end{align*}
+\begin {enumerate}
+
+\item Example with a square
+
+\begin{align*}
+y &= \sqrt{16 - x^2}\\
+V &= 2 \int _0^4 \left(\sqrt{16-x^2}\right)^2
+\end{align*}
+
+\item Example with a right triangle
+
+\begin{align*}
+y &= \sqrt{16 - x^2}\\
+V &= \int _0^4 \left(\sqrt{16-x^2}\right)^2
+\end{align*}
+
+\item Example with a semicircle
+
+\begin{align*}
+y &= \sqrt{16 - x^2}\\
+V &= 2 \pi \int _0^4 \left(\frac{\sqrt{16-x^2}}{2}\right)^2
+\end{align*}
+
+\end{enumerate}
+\end{enumerate}
+
+
+\end{document}
